@@ -6,14 +6,11 @@ import FrontImg from '../../assets/Front.jpg'
 import DefaultInput from '../../component/Form/DefaultInput'
 import DefaultButton from '../../component/Buttons/DefaultButton'
 import Toast from '../../component/Toast/Toast'
-import { useAuth } from '../../context/AuthContext'
 
-const Login = () => {
+const ForgetPassword = () => {
     const navigate = useNavigate()
-    const { login } = useAuth()
     const { values, handleChange } = useForm({
         email: '',
-        password: ''
     })
 
     const [loading, setLoading] = useState(false)
@@ -25,11 +22,11 @@ const Login = () => {
 
         try {
 
-            const res = await API.post('/login', values)
+            const res = await API.post('/forgot-password', values)
 
             if (res.data.success === true) {
                 setToast({ success: true, message: res.data.message });
-                login(res.data.token)
+
                 setTimeout(() => {
                     navigate('/')
                 }, 3000)
@@ -95,10 +92,10 @@ const Login = () => {
 
                 <div className="absolute top-6 right-8">
                     <a
-                        href="/registation"
+                        href="/"
                         className="text-gray-900 font-medium hover:text-black transition-colors duration-300"
                     >
-                        Create Account →
+                        Back to Login →
                     </a>
                 </div>
 
@@ -107,10 +104,10 @@ const Login = () => {
 
                     <div className="space-y-1">
                         <h1 className="text-3xl font-bold text-gray-900">
-                            Welcome Back to <span className="text-black">Drug for You</span>
+                            Forget Password ?
                         </h1>
                         <p className="text-sm text-gray-500">
-                            Create your account to access the Pharmacy Management System
+                            If you forgot your password, enter your email address and we will send you a password reset link to create a new password.
                         </p>
                     </div>
 
@@ -127,33 +124,14 @@ const Login = () => {
                             />
                         </div>
 
-                        <div>
-                            <DefaultInput
-                                type="password"
-                                label="Enter Password"
-                                name={'password'}
-                                value={values.password}
-                                placeholder="********"
-                                required
-                                onChange={handleChange}
-                            />
-                        </div>
-
                         <div className="pt-2">
                             <DefaultButton
                                 type="submit"
-                                label={loading ? 'Verifing Login...' : 'Login'}
+                                label={loading ? 'Verifing Account...' : 'Request Password Reset'}
                             />
                         </div>
 
                     </form>
-
-                    <div className="">
-                        <a href="/forget-password" className='text-gray-900 font-medium hover:text-black transition-colors duration-300'>
-                            Forget Password
-                        </a>
-                    </div>
-
                 </div>
 
             </div>
@@ -162,4 +140,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default ForgetPassword
