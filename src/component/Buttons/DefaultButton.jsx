@@ -23,13 +23,13 @@ const DefaultButton = ({
 
                 ${
                     disabled
-                        ? 'bg-gray-400 cursor-not-allowed'
+                        ? 'bg-gray-600 cursor-not-allowed opacity-50'
                         : `
                             bg-gradient-to-r
-                            from-indigo-500 via-indigo-600 to-indigo-700
-                            hover:from-indigo-600 hover:via-indigo-700 hover:to-indigo-800
+                            from-black via-gray-900 to-gray-800
+                            hover:from-gray-900 hover:via-black hover:to-gray-900
                             focus:outline-none
-                            focus:ring-2 focus:ring-indigo-300/40
+                            focus:ring-2 focus:ring-gray-500/40
                         `
                 }
             `}
