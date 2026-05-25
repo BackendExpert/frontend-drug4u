@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 export const AuthContext = createContext();
 
@@ -18,8 +18,12 @@ export const AuthProvider = ({ children }) => {
         const decoded = jwtDecode(token);
 
         const email = decoded.email || "";
-        const username = email ? email.split("@")[0] : "";
 
+        const username =
+            decoded.username?.trim() ||
+            email?.split("@")[0] ||
+            "User";
+            
         return {
             token,
             id: decoded.sub || null,

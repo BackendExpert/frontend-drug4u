@@ -34,8 +34,8 @@ const DashFooter = () => {
 
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
 
-                    <h1 className="text-indigo-600 font-bold text-lg tracking-tight">
-                        MHMS
+                    <h1 className="text-black font-bold text-lg tracking-tight">
+                        Drug4U
                     </h1>
 
                     <p className="text-sm text-gray-400 md:ml-2">
@@ -51,7 +51,7 @@ const DashFooter = () => {
                         <a
                             key={index}
                             href={link.href}
-                            className="text-sm text-gray-500 hover:text-indigo-600 transition"
+                            className="text-sm text-gray-500 hover:text-black transition"
                         >
                             {link.name}
                         </a>
@@ -66,7 +66,7 @@ const DashFooter = () => {
                         href="https://www.blackalphalabs.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-500 hover:text-indigo-600 transition"
+                        className="text-gray-500 hover:text-black transition"
                     >
                         <FaGlobe className="w-5 h-5" />
                     </a>
@@ -75,7 +75,7 @@ const DashFooter = () => {
                         href="https://linkedin.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-500 hover:text-indigo-600 transition"
+                        className="text-gray-500 hover:text-black transition"
                     >
                         <FaLinkedin className="w-5 h-5" />
                     </a>
@@ -84,7 +84,7 @@ const DashFooter = () => {
                         href="https://github.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-500 hover:text-indigo-600 transition"
+                        className="text-gray-500 hover:text-black transition"
                     >
                         <FaGithub className="w-5 h-5" />
                     </a>
@@ -103,12 +103,12 @@ const DashFooter = () => {
                         href="https://www.blackalphalabs.com"
                         target="_blank"
                         rel="noreferrer"
-                        className="mx-1 text-indigo-600 hover:text-indigo-500 transition"
+                        className="mx-1 text-gray-500 hover:text-black transition"
                     >
                         BlackAlphaLabs PVT.Ltd
                     </a>
 
-                    • Enterprise Monitoring Platform
+                    • Enterprise Health-Care
 
                 </p>
 

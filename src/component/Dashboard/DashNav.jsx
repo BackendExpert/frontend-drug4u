@@ -51,7 +51,7 @@ const DashNav = () => {
 
                     <p className="text-sm text-gray-400 mt-1">
                         Welcome back
-                        <span className="ml-2 font-semibold text-indigo-600">
+                        <span className="ml-2 font-semibold text-black">
                             {auth?.username}
                         </span>
                     </p>
@@ -60,15 +60,15 @@ const DashNav = () => {
 
                 <div className="flex items-center gap-7">
 
-                    <button className="relative text-gray-500 hover:text-indigo-600 transition duration-300 hidden md:flex">
+                    <button className="relative text-gray-500 hover:text-black transition duration-300 hidden md:flex">
 
                         <HiOutlineBell size={24} />
 
-                        <span className="absolute -top-1 -right-1 w-2 h-2 bg-indigo-500 rounded-full" />
+                        <span className="absolute -top-1 -right-1 w-2 h-2 bg-black rounded-full" />
 
                     </button>
 
-                    <button className="text-gray-500 hover:text-indigo-600 transition duration-300 hidden md:flex">
+                    <button className="text-gray-500 hover:text-black transition duration-300 hidden md:flex">
 
                         <HiOutlineCog6Tooth size={24} />
 
@@ -90,7 +90,7 @@ const DashNav = () => {
                                     {auth?.username}
                                 </p>
 
-                                <p className="text-xs text-gray-400 mt-1">
+                                <p className="text-xs text-black-400 mt-1">
                                     {auth?.role}
                                 </p>
 
@@ -134,7 +134,7 @@ const DashNav = () => {
                                             {auth?.email}
                                         </p>
 
-                                        <p className="text-xs text-indigo-600 mt-1">
+                                        <p className="text-xs text-black mt-1">
                                             {auth?.role}
                                         </p>
 

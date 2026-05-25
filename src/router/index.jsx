@@ -8,6 +8,7 @@ import DefultError from '../component/Errors/DefultError'
 import Login from '../pages/auth/Login'
 import ForgetPassword from '../pages/auth/ForgetPassword'
 import ResetPassword from '../pages/auth/ResetPassword'
+import Unauthorized from './Unauthorized'
 
 
 function App() {
@@ -20,10 +21,11 @@ function App() {
                     <Route path='/registation' element={<Registation />} />
                     <Route path='/forget-password' element={<ForgetPassword />} />
                     <Route path='/reset-password' element={<ResetPassword />} />
+                    <Route path='/unauthorized' element={<Unauthorized />} />
                 </Route>
 
-                <Route path='/dashboard/' element={<PrivateRoute roles={['super_admin', 'plant_admin', 'engineer', 'viewer']} ><Dashboard /></PrivateRoute>}>
-                    <Route path='*' element={<PrivateRoute roles={['super_admin', 'plant_admin', 'engineer', 'viewer']} ><DashError /></PrivateRoute>} />
+                <Route path='/dashboard/' element={<PrivateRoute roles={['super_admin', 'user']} ><Dashboard /></PrivateRoute>}>
+                    <Route path='*' element={<PrivateRoute roles={['super_admin', 'user']} ><DashError /></PrivateRoute>} />
 
                 </Route>
 

@@ -31,7 +31,7 @@ const Login = () => {
                 setToast({ success: true, message: res.data.message });
                 login(res.data.token)
                 setTimeout(() => {
-                    navigate('/')
+                    navigate('/dashboard')
                 }, 3000)
             }
             else {
