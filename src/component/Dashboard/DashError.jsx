@@ -10,10 +10,10 @@ const DashError = () => {
                 {/* Icon */}
                 <div className="flex justify-center mb-10">
                     <div className="relative">
-                        <div className="absolute inset-0 animate-pulse rounded-full bg-indigo-100" />
+                        <div className="absolute inset-0 animate-pulse rounded-full bg-black" />
                         <div className="relative p-6">
                             <AlertTriangle
-                                className="w-16 h-16 text-indigo-600"
+                                className="w-16 h-16 text-white"
                                 strokeWidth={1.5}
                             />
                         </div>
@@ -21,7 +21,7 @@ const DashError = () => {
                 </div>
 
                 {/* Code */}
-                <h1 className="text-7xl font-bold tracking-tight text-indigo-600">
+                <h1 className="text-7xl font-bold tracking-tight text-black">
                     501
                 </h1>
 
@@ -41,7 +41,7 @@ const DashError = () => {
 
                     <button
                         onClick={() => window.location.href = "/dashboard"}
-                        className="group flex items-center gap-2 text-indigo-600 font-semibold hover:gap-3 transition-all"
+                        className="group flex items-center gap-2 text-black font-semibold hover:gap-3 transition-all"
                     >
                         <span>Return to Dashboard</span>
                         <ArrowRight
@@ -52,7 +52,7 @@ const DashError = () => {
 
                     <a
                         href="#"
-                        className="flex items-center gap-2 text-gray-500 font-medium hover:text-indigo-600 transition"
+                        className="flex items-center gap-2 text-gray-500 font-medium hover:text-black transition"
                     >
                         <LifeBuoy size={18} />
                         <span>Contact Support</span>

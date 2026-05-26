@@ -9,6 +9,11 @@ import Login from '../pages/auth/Login'
 import ForgetPassword from '../pages/auth/ForgetPassword'
 import ResetPassword from '../pages/auth/ResetPassword'
 import Unauthorized from './Unauthorized'
+import DashHome from '../pages/dashboard/DashHome'
+import Users from '../pages/dashboard/users/Users'
+import MyProfile from '../pages/my/MyProfile'
+import Patients from '../pages/dashboard/patients/Patients'
+import ViewPatient from '../pages/dashboard/patients/ViewPatient'
 
 
 function App() {
@@ -24,8 +29,21 @@ function App() {
                     <Route path='/unauthorized' element={<Unauthorized />} />
                 </Route>
 
-                <Route path='/dashboard/' element={<PrivateRoute roles={['super_admin', 'user']} ><Dashboard /></PrivateRoute>}>
-                    <Route path='*' element={<PrivateRoute roles={['super_admin', 'user']} ><DashError /></PrivateRoute>} />
+                <Route path='/dashboard/' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><Dashboard /></PrivateRoute>}>
+                    <Route path='*' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><DashError /></PrivateRoute>} />
+                    <Route index element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><DashHome /></PrivateRoute>} />
+                    
+                    {/* profile managment - moslty for custormers */}
+                    <Route path='profile' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><MyProfile /></PrivateRoute>} />
+                
+                    {/* user management */}
+                    <Route path='users' element={<PrivateRoute roles={['super_admin']} ><Users /></PrivateRoute>} />
+
+                    {/* pharmacist */}
+
+                    <Route path='patients' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><Patients /></PrivateRoute>} />
+                    <Route path='patient/:id' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><ViewPatient /></PrivateRoute>} />
+
 
                 </Route>
 

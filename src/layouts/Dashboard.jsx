@@ -25,7 +25,7 @@ const Dashboard = () => {
             {/* mobile menu button */}
             <button
                 onClick={() => setOpen(true)}
-                className="xl:hidden fixed top-4 left-4 z-50 w-11 h-11 bg-indigo-500 text-white rounded-full flex items-center justify-center shadow-lg"
+                className="xl:hidden fixed top-4 left-4 z-50 w-11 h-11 bg-black text-white rounded-full flex items-center justify-center shadow-lg"
             >
                 <TiThMenu size={22} />
             </button>
@@ -62,7 +62,7 @@ const Dashboard = () => {
 
                 <DashNav />
 
-                <div className="flex-1 mx-6 ">
+                <div className="flex-1 mx-6 mb-8 ">
                     <Outlet />
                 </div>
 

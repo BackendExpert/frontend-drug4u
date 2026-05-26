@@ -105,8 +105,8 @@ const DashNav = () => {
                             <HiOutlineChevronDown
                                 size={18}
                                 className={`text-gray-400 transition duration-500 ${open
-                                        ? "rotate-180 text-indigo-600"
-                                        : ""
+                                    ? "rotate-180 text-black"
+                                    : ""
                                     }`}
                             />
 
@@ -146,7 +146,7 @@ const DashNav = () => {
 
                                     <a href="/dashboard/profile">
 
-                                        <button className="w-full flex items-center gap-4 py-3 text-left text-gray-600 hover:text-indigo-600 transition">
+                                        <button className="w-full flex items-center gap-4 py-3 text-left text-gray-600 hover:text-black transition">
 
                                             <HiOutlineUserCircle size={22} />
 
@@ -160,7 +160,7 @@ const DashNav = () => {
 
                                     <a href="/dashboard/settings">
 
-                                        <button className="w-full flex items-center gap-4 py-3 text-left text-gray-600 hover:text-indigo-600 transition">
+                                        <button className="w-full flex items-center gap-4 py-3 text-left text-gray-600 hover:text-black transition">
 
                                             <HiOutlineCog6Tooth size={22} />
 
@@ -176,10 +176,15 @@ const DashNav = () => {
 
                                         <HiOutlineArrowRightOnRectangle size={22} />
 
-                                        <span className="text-sm font-medium">
+                                        <span
+                                            className="text-sm font-medium cursor-pointer"
+                                            onClick={() => {
+                                                localStorage.clear();
+                                                window.location.reload();
+                                            }}
+                                        >
                                             Logout
                                         </span>
-
                                     </button>
 
                                 </div>
