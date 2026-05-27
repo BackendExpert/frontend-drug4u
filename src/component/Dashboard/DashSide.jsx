@@ -12,7 +12,14 @@ import {
     ChevronDown,
     ChevronRight,
     Hexagon,
+    Pill,
+    DollarSignIcon,
+    Bell,
 } from "lucide-react";
+
+import { GiMedicinePills } from "react-icons/gi";
+import { TbReport } from "react-icons/tb";
+
 
 import { NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -65,6 +72,74 @@ const DashSide = () => {
                 },
             ],
         },
+        {
+            title: "My Purchase",
+            items: [
+                {
+                    name: "My Purchased Medicines",
+                    icon: <DollarSignIcon size={18} />,
+                    roles: ['customer'],
+                    submenu: [
+                        {
+                            name: "Medicines",
+                            link: "/dashboard/my-purchase",
+                        },
+                    ],
+                },
+
+            ],
+        },
+        {
+            title: "medicines",
+            items: [
+                {
+                    name: "Purchase Medicines",
+                    icon: <GiMedicinePills size={18} />,
+                    roles: ['super_admin', 'customer', 'pharmacist'],
+                    submenu: [
+                        {
+                            name: "Medicines",
+                            link: "/dashboard/view-medicines",
+                        },
+                    ],
+                },
+
+                // {
+                //     name: "Settings",
+                //     icon: <Settings size={18} />,
+                //     link: "/dashboard",
+                //     ['super_admin', 'pharmacist'],
+                // },
+            ],
+        },
+        {
+            title: "medicines management",
+            items: [
+                {
+                    name: "Medicines",
+                    icon: <Pill size={18} />,
+                    link: "/dashboard/medicines",
+                    roles: ['super_admin', 'pharmacist'],
+                    submenu: [
+                        {
+                            name: "Create New Medicine",
+                            link: "/dashboard/medicine/create",
+                        },
+                        {
+                            name: "Medicines",
+                            link: "/dashboard/medicines",
+                        },
+                    ],
+                },
+
+                // {
+                //     name: "Settings",
+                //     icon: <Settings size={18} />,
+                //     link: "/dashboard",
+                //     ['super_admin', 'pharmacist'],
+                // },
+            ],
+        },
 
         {
             title: "patient management",
@@ -86,19 +161,47 @@ const DashSide = () => {
         },
 
         {
+            title: "Notifications",
+            items: [
+                {
+                    name: "Notifications",
+                    icon: <Bell size={18} />,
+                    roles: ['super_admin', 'pharmacist'],
+                    submenu: [
+                        {
+                            name: "Manage",
+                            link: "/dashboard/notifications",
+                        },
+                    ],
+                },
+
+            ],
+        },
+
+        {
+            title: "Reports",
+            items: [
+                {
+                    name: "Report Managment",
+                    icon: <TbReport size={18} />,
+                    roles: ['super_admin', 'pharmacist'],
+                    submenu: [
+                        {
+                            name: "Manage",
+                            link: "/dashboard/reports",
+                        },
+                    ],
+                },
+
+            ],
+        },
+        {
             title: "Administration",
             items: [
                 {
                     name: "Users",
                     icon: <Users size={18} />,
                     link: "/dashboard/users",
-                    roles: ['super_admin'],
-                },
-
-                {
-                    name: "Settings",
-                    icon: <Settings size={18} />,
-                    link: "/dashboard/settings",
                     roles: ['super_admin'],
                 },
             ],

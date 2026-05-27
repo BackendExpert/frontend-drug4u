@@ -14,6 +14,14 @@ import Users from '../pages/dashboard/users/Users'
 import MyProfile from '../pages/my/MyProfile'
 import Patients from '../pages/dashboard/patients/Patients'
 import ViewPatient from '../pages/dashboard/patients/ViewPatient'
+import Medicines from '../pages/dashboard/medicines/Medicines'
+import CreateMedicine from '../pages/dashboard/medicines/CreateMedicine'
+import ViewMedicine from '../pages/dashboard/medicines/ViewMedicine'
+import ViewMedicines from '../pages/dashboard/viewMedicines/ViewMedicines'
+import ViewOneMedicine from '../pages/dashboard/viewMedicines/ViewOneMedicine'
+import MyPurchase from '../pages/my/MyPurchase'
+import Notifications from '../pages/dashboard/notifications/Notifications'
+import Reports from '../pages/dashboard/reports/Reports'
 
 
 function App() {
@@ -35,14 +43,29 @@ function App() {
                     
                     {/* profile managment - moslty for custormers */}
                     <Route path='profile' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><MyProfile /></PrivateRoute>} />
+                    <Route path='my-purchase' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><MyPurchase /></PrivateRoute>} />
                 
                     {/* user management */}
                     <Route path='users' element={<PrivateRoute roles={['super_admin']} ><Users /></PrivateRoute>} />
 
                     {/* pharmacist */}
-
                     <Route path='patients' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><Patients /></PrivateRoute>} />
                     <Route path='patient/:id' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><ViewPatient /></PrivateRoute>} />
+
+                    {/* Medicne */}
+                    <Route path='medicines' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><Medicines /></PrivateRoute>} />
+                    <Route path='medicine/create' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><CreateMedicine /></PrivateRoute>} />
+                    <Route path='medicine/view/:id' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><ViewMedicine /></PrivateRoute>} />
+
+                    {/* online shop */}
+                    <Route path='view-medicines' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><ViewMedicines /></PrivateRoute>} />
+                    <Route path='view-one-medicines/:id' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><ViewOneMedicine /></PrivateRoute>} />
+
+                    {/* notifications */}
+                    <Route path='notifications' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><Notifications /></PrivateRoute>} />
+
+                    {/* reports */}
+                    <Route path='reports' element={<PrivateRoute roles={['super_admin', 'customer', 'pharmacist']} ><Reports /></PrivateRoute>} />
 
 
                 </Route>
