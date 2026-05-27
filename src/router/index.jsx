@@ -22,6 +22,7 @@ import ViewOneMedicine from '../pages/dashboard/viewMedicines/ViewOneMedicine'
 import MyPurchase from '../pages/my/MyPurchase'
 import Notifications from '../pages/dashboard/notifications/Notifications'
 import Reports from '../pages/dashboard/reports/Reports'
+import ViewUser from '../pages/dashboard/users/ViewUser'
 
 
 function App() {
@@ -47,6 +48,8 @@ function App() {
                 
                     {/* user management */}
                     <Route path='users' element={<PrivateRoute roles={['super_admin']} ><Users /></PrivateRoute>} />
+                    <Route path='user/:email' element={<PrivateRoute roles={['super_admin']} ><ViewUser /></PrivateRoute>} />
+                
 
                     {/* pharmacist */}
                     <Route path='patients' element={<PrivateRoute roles={['super_admin', 'pharmacist']} ><Patients /></PrivateRoute>} />

@@ -127,6 +127,13 @@ const Users = () => {
                                                     </span>
 
                                                 </td>
+                                                <td className="px-6 py-4">
+                                                    <a
+                                                        href={`/dashboard/user/${data.email}`}
+                                                        className="text-sm font-medium text-blue-600 hover:text-blue-800 cursor-pointer">
+                                                        View
+                                                    </a>
+                                                </td>
 
                                             </tr>
 
